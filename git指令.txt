@@ -1,0 +1,19 @@
+右键桌面选择Git Bash Here
+输入git clone https://github.com/cgb1902-3/OnlineBank.git 将仓库克隆到桌面
+用Eclipse导入OnlineBank中的BankV1.01项目,然后Update Project
+
+
+
+代码提交:
+在Eclipse工作空间中把项目复制到OnlineBank中覆盖原有项目
+右键OnlineBank选择Git Bash Here
+依次输入:
+git add BankV1.01 
+git commit –m “BankV1.01”
+git push 
+
+
+代码更新:
+右键OnlineBank选择Git Bash Here
+输入:
+git pull
