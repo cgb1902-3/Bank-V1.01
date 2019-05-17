@@ -39,9 +39,8 @@
 	</bean>
 	<!-- 通过此bean对象扫描指定包下的dao接口，并基于接口创建其实现类对象(代理对象) -->
 	<bean id="daoScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="BasePackage" value="com.db.**.dao" />
+		<property name="BasePackage" value="com.bank.**.dao" />
 		<!-- 当spring容器只有一个sqlSessionFactory时如下配置可以不写 -->
 		<property name="SqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
-	
 </beans>

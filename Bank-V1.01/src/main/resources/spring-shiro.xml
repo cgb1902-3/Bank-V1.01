@@ -26,10 +26,6 @@
 		<!-- 设置请求过滤规则 -->
 		<property name="FilterChainDefinitionMap">
 			<map>
-				<entry key="/bower_components/**" value="anon" /><!-- anon表示允许匿名访问 -->
-				<entry key="/build/**" value="anon" />
-				<entry key="/dist/**" value="anon" />
-				<entry key="/plugins/**" value="anon" />
 				<entry key="/user/doLogin.do" value="anon" />
 				<entry key="/doLogout.do" value="logout" />
 				<!-- 除了上面的资源,其它的路径都要进行认证 -->
