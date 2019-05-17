@@ -5,6 +5,7 @@
 
 
 代码提交:
+注意:在代码提交之前一定要更新一下代码(git pull),否则有可能提交出错
 在Eclipse工作空间中把项目复制到OnlineBank中覆盖原有项目
 右键OnlineBank选择Git Bash Here
 依次输入:
