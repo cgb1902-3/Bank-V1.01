@@ -21,7 +21,7 @@
        http://www.springframework.org/schema/context
       http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	<context:component-scan base-package="com.bank.sys.service"/>
-	<import resource="classpath:spring-shiro.xml"/>
+	<!-- <import resource="classpath:spring-shiro.xml"/> -->
 	<!-- 配置对类组件的扫描 -->
 	<context:component-scan base-package="com.bank.common.aspect" />
 	<!-- 启用AOP注解(自动为目标对象创建代理对象) -->
