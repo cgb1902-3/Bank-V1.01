@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class PageController {
-	@RequestMapping("test")
+	@RequestMapping("doIndex")
 	public String test(){
-		return "Test";
+		return "index";
 	}
 }
