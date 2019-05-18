@@ -35,7 +35,7 @@
 	<bean id="sqlSessionFactory"  class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="DataSource" ref="dataSource" />
 		<!-- 设置mapper文件的位置 -->
-		<property name="MapperLocations" value="classpath*:mapper/sys/*.xml" />
+		<property name="MapperLocations" value="classpath*:mapper/*/*.xml" />
 	</bean>
 	<!-- 通过此bean对象扫描指定包下的dao接口，并基于接口创建其实现类对象(代理对象) -->
 	<bean id="daoScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
