@@ -17,4 +17,8 @@ public class PageController {
 	public String doLoginManager(){
 		return "login_manager";
 	}
+	@RequestMapping("doUserMessage")
+	public String doUserMessage() {
+		return "usermessage";
+	}
 }

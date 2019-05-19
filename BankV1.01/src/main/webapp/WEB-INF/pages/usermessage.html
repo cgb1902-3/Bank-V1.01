@@ -1,0 +1,575 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!--[if IE 10]><html class="ie ie10"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 7]><html class="ie ie7"><![endif]-->
+<!--[if IE 7]><html class="ie ie6"><![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="renderer" content="ie-stand">
+<title>中国银行网上银行</title>
+<link rel="stylesheet" type="text/css"
+	href="css/bocue.css?v=20190505070841817" media="all">
+<link rel="stylesheet" type="text/css"
+	href="css/login.css?v=20190505070841817" media="all">
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css?v=20190505070841817" /><![endif]-->
+<!--[if lte IE 8]><script type="text/javascript" src="scripts/lib/excanvas.js"></script><![endif]-->
+<!--[if IE 6]><script type="text/javascript" src="scripts/DD_belatedPNG_0.0.8a-min.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css"
+	href="css/w1200.css?v=20190505070841817" media="all">
+<link rel="stylesheet" type="text/css"
+	href="css/w1600.css?v=20190505070841817" media="all">
+<link rel="stylesheet" type="text/css"
+	href="css/datepicker.css?v=20190505070841817" media="all">
+<link rel="stylesheet" type="text/css"
+	href="css/print.css?v=20190505070841817" media="print">
+<script type="text/javascript" async=""
+	src="scripts/lib/tfp-sdk.pc.v1.0.0.js"></script>
+<script type="text/javascript">
+	function openNewWindow(url) {
+		window
+				.open(
+						url,
+						null,
+						"toolbar=no, menubar=no,scrollbars=yes,resizable=yes, location=no, status=no,fullscreen=yes");
+	}
+	history.go(1);
+</script>
+<script type="text/javascript"
+	src="scripts/lib/lan_c.js?v=20190505070841817"></script>
+<script id="t_tmpl" type="text/html">
+<div>
+	<div class="login-article login-self bu-reser-i">
+	  <ul class="bu-tabs clearfix">
+	    <li class="tabs tabs-current" id="div_account_information_740992">
+	      <span class="tabs-m" lan="l0177" v="账户详情"></span>
+	      <span class="tabs-r"></span>
+	    </li>
+	    <li class="tabs" id="div_transaction_details_740993">
+	      <span class="tabs-m" lan="l0176" v="交易明细"></span>
+	      <span class="tabs-r"></span>
+	    </li>
+	  </ul>
+	  <div class="layout-title">
+	    <p class="tac mt15 ly-title">
+	      <label v="账户" lan={{if debitCard.isHaveEleCashAcct == "1"}}"l4386"{{else}}"l0290"{{/if}}></label><em lan="l35346"></em>
+	      <span id="div_accountnumber_740994">
+	      	<span lan="payeraccount_${debitCard.accountType}"></span>
+	      	<span>${StringUtil.maskAccount(debitCard.accountNumber)}</span>
+	  		<span lan="payeraccount_${debitCard.accountIbkNum}"></span>
+	      </span>
+	    </p>
+	    <ul class="layout-lr">
+	        <li class="clearfix">
+	            <span class="item-title">
+	              <label v="账户状态" lan="l6510"></label><em lan="l35346"></em>
+	            </span>
+	            <div class="item-con" id="div_zhzt_740995" lan="accountstatus_${debitCard.accountStatus}"></div>
+	        </li>
+	        <li class="clearfix">
+	            <span class="item-title">
+	              <label v="开户网点" lan="l6294"></label><em lan="l35346"></em>
+	            </span>
+	            <div class="item-con"  id="div_establishpoint_740997">${debitCard.openBank}</div>
+	        </li>
+	        <li class="clearfix">
+	            <span class="item-title">
+	              <label v="开户日期" lan="l2232"></label><em lan="l35346"></em>
+	            </span>
+	            <div class="item-con"  id="div_khrq_740999">${debitCard.openDate}</div>
+	        </li>
+	        <li class="clearfix">
+	            <span class="item-title">
+	              <label v="当前账户所属地区" lan="l56360"></label><em lan="l35346"></em>
+	            </span>
+	            <div class="item-con"  lan="payeraccount_${debitCard.accountIbkNum}"></div>
+	        </li>
+	    </ul>
+	  </div>
+	  {{if debitCard.accountDetaiList.length>0}}
+	  <div class="tb-box">
+	    <table class="tb">
+	      <thead>
+	        <tr>
+	          <th class="fi wp20" v="币种" lan="l0093"></th>
+	          <th class="wp20" lan="l0494" v="钞/汇"></th>
+	          <th class="tar wp28" v="账户余额" lan="l3011"></th>
+	          <th class="tar" v="可用余额" lan="l0496"></th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	       {{each debitCard.accountDetaiList}}
+		        <tr class="${$index % 2==0 ?'odd':'even'}">
+		          <td class="fi" lan="currency_type_${$value.currencyCode}"></td>
+		          <td lan="moneyremit_${$value.cashRemit}"></td>
+		          <td class="tar">${$value.bookBalance.formatNum($value.currencyCode,false,"n")}</td>
+		          <td class="tar">${$value.availableBalance.formatNum($value.currencyCode,false,"n")}</td>
+		        </tr>
+	        {{/each}}
+	      </tbody>
+	    </table>
+	  </div>
+	  {{/if}}
+	 <div class="layout-title {{if debitCard.isHaveEleCashAcct == "0"}}hide{{/if}}">
+	    <ul class="layout-lr mt15">
+	    	 <li class="clearfix">
+		      <span class="item-title">
+		     	<label v="电子现金账户" lan="l0179"></label><em lan="l35346"></em>
+			  </span>
+	      	  <div class="item-con">
+		      	<span id="div_accountnumber_740994">
+			      	<span lan="payeraccount_300"></span>
+			      	<span>${StringUtil.maskAccount(debitCard.accountNumber)}</span>
+			  		<span lan="payeraccount_${debitCard.accountIbkNum}"></span>
+		      	</span>
+		      </div>
+		    </li>
+	        <li class="clearfix">
+	            <span class="item-title">
+	              <label v="账户状态" lan="l50519"></label><em lan="l35346"></em>
+	            </span>
+	            <div class="item-con"  id="div_50519_740956" lan="electron_cash_account_status_${eleCashCard.accountStatus}"></div>
+	        </li>
+	    </ul>
+	  </div>
+	  <div class="tb-box {{if debitCard.isHaveEleCashAcct == "0"}}hide{{/if}}">
+	    <table class="tb">
+	      <thead>
+	        <tr>
+	          <th class="fi wp25 tar" v="电子现金卡片余额上限" lan="l1888"></th>
+	          <th class="wp25 tar" lan="l1889" v="电子现金脱机消费单笔交易限额"></th>
+	          <th class="wp15" lan="l0093" v="币种"></th>
+	          <th class="wp10" lan="l0494" v="钞/汇"></th>
+	          <th class="tar" lan="l1848" v="补登余额"></th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr class="odd">
+	          <td class="fi tar" lan="num" currCode="${eleCashCard.currency}">{{if eleCashCard.eCashUpperLimit }}${eleCashCard.eCashUpperLimit}{{/if}}</td>
+	          <td class="tar" lan="num" currCode="${eleCashCard.currency}">{{if eleCashCard.singleLimit }}${eleCashCard.singleLimit}{{/if}}</td>
+	          <td class="wp20" lan="currency_code_${eleCashCard.currency}"></th>
+	          <td >
+	          	{{if eleCashCard.currency=="CNY"}}
+	          		-
+	          	{{else}}
+	          		<span lan="moneyremit_${eleCashCard.cashRemit}"></span>
+	          	{{/if}}
+	          </td>
+	          <td class="tar" lan="num" currCode="${eleCashCard.currency}">{{if eleCashCard.supplyBalance }}${eleCashCard.supplyBalance}{{/if}}</td>
+	        </tr>
+	      </tbody>
+	    </table>
+	  </div>
+	  <div class="tips-box">
+	    <div class="tips-title" lan="l6720" v="温馨提示"></div>
+	    <ol class="sn-box">
+	        <li class="clearfix" id="div_1852_740962">
+	              <label class="num">1.</label>
+	              <span class="con" v="夜间由于我行须进行系统数据处理，可能出现部分账户余额短时间无法查询的情况。" lan="l1852"></span>
+	        </li>
+	        <li class="clearfix {{if debitCard.isHaveEleCashAcct == "0"}}hide{{/if}}" id="div_8053_740963">
+	              <label class="num">2.</label>
+	              <span class="con" v="电子现金卡片余额上限是指记载在客户芯片上，客户可自行修改的可充值金额上限。" lan="l8053"></span>
+	        </li>
+	        <li class="clearfix {{if debitCard.isHaveEleCashAcct == "0"}}hide{{/if}}" id="div_8054_740964">
+	              <label class="num">3.</label>
+	              <span class="con" v="电子现金卡片单笔交易限额是指记载在客户芯片上，客户可自行修改的脱机消费单笔金额上限。" lan="l8054"></span>
+	        </li>
+	        <li class="clearfix {{if debitCard.isHaveEleCashAcct == "0"}}hide{{/if}}" id="div_8055_740965">
+	              <label class="num">4.</label>
+	              <span class="con" v="补登账户余额为以网银等渠道在卡片未出现情况下进行充值的金额，您需在我行自助终端或柜台将资金写入芯片进行使用。" lan="l8055"></span>
+	        </li>
+	    </ol>
+	  </div>
+	</div>
+	<p class="page-num text-darkengray tac"><span lan="l7935" v="页面号"></span><em>A0010001</em></p>
+</div>
+</script>
+<script type="text/javascript"
+	src="scripts/lib/lan_c.js?v=20190505070841817"></script>
+<script type="text/javascript"
+	src="scripts/lib/lan_c.js?v=20190505070841817"></script>
+</head>
+<body class="">
+	<div id="wrapper" class="bu-wrapper">
+		<div id="header" class="bu-header clearfix">
+			<h1 class="logo">
+				<span>中国银行网上银行</span>
+			</h1>
+			<div class="lan-box hide-for-init">
+				<span class="register"><span v="您好，" lan="l7525">您好，</span> <span
+					class="ml5 mr5" id="welcome-customerGender_EN"></span> <span
+					id="welcome-customerName">#{用户姓名}</span> <span
+					id="welcome-customerGender_CN"></span></span> <a
+					href="https://95566.boc.cn/ZIM/index.htm" id="a_60_1169"
+					urllan="url.onlineServiceUrl" class="service-r" lan="l22359"
+					v="在线客服">在线客服</a> <a href="javascript:void(0);" id="a_55_1164"
+					class="lan-en" lan="l0055" v="English">English</a> <a
+					href="javascript:void(0);" id="a_56_1165" class="lan-zh hide"
+					lan="l0056" v="中文" visible="false" style="display: none;">中文</a> <a
+					href="javascript:void(0);" id="a_58_1167" class="help" lan="l0058"
+					v="帮助">帮助</a> <a href="javascript:void(0);" id="a_59_1168"
+					class="out" lan="l0059" v="安全退出">安全退出</a>
+			</div>
+		</div>
+		<div id="main" class="bu-main clearfix">
+			<div class="bu-login-box clearfix">
+				<div id="cardMain" class="oa-gift fl">
+					<div class="login-article login-self bu-reser-i">
+						<ul class="bu-tabs clearfix">
+							<li class="tabs tabs-current" id="div_account_information_740992">
+								<span class="tabs-m" lan="l0177" v="账户详情">账户详情</span> <span
+								class="tabs-r"></span>
+							</li>
+							<li class="tabs" id="div_transaction_details_740993"><span
+								class="tabs-m" lan="l0176" v="交易明细">交易明细</span> <span
+								class="tabs-r"></span></li>
+						</ul>
+						<div class="layout-title">
+							<p class="tac mt15 ly-title">
+								<label v="账户" lan="l4386">借记卡</label><em lan="l35346">：</em> <span
+									id="div_accountnumber_740994"> <span
+									lan="payeraccount_119">长城电子借记卡</span> 
+									<span>6217******7009</span>
+									<span lan="payeraccount_47669">深圳</span>
+								</span>
+							</p>
+							<ul class="layout-lr">
+								<li class="clearfix"><span class="item-title"> <label
+										v="账户状态" lan="l6510">账户状态</label><em lan="l35346">：</em>
+								</span>
+									<div class="item-con" id="div_zhzt_740995"
+										lan="accountstatus_00">有效</div></li>
+								<li class="clearfix"><span class="item-title"> <label
+										v="开户网点" lan="l6294">开户网点</label><em lan="l35346">：</em>
+								</span>
+									<div class="item-con" id="div_establishpoint_740997">中国银行深圳沙井支行</div>
+								</li>
+								<li class="clearfix"><span class="item-title"> <label
+										v="开户日期" lan="l2232">开户日期</label><em lan="l35346">：</em>
+								</span>
+									<div class="item-con" id="div_khrq_740999">2017/08/08</div></li>
+								<li class="clearfix"><span class="item-title"> <label
+										v="当前账户所属地区" lan="l56360">当前账户所属地区</label><em lan="l35346">：</em>
+								</span>
+									<div class="item-con" lan="payeraccount_47669">深圳</div></li>
+							</ul>
+						</div>
+						<div class="tb-box">
+							<table class="tb">
+								<thead>
+									<tr>
+										<th class="fi wp20" v="币种" lan="l0093">币种</th>
+										<th class="wp20" lan="l0494" v="钞/汇">钞/汇</th>
+										<th class="tar wp28" v="账户余额" lan="l3011">账户余额</th>
+										<th class="tar" v="可用余额" lan="l0496">可用余额</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="odd">
+										<td class="fi" lan="currency_type_001">人民币元</td>
+										<td lan="moneyremit_00">-</td>
+										<td class="tar">0.04</td>
+										<td class="tar">0.04</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="layout-title ">
+							<ul class="layout-lr mt15">
+								<li class="clearfix"><span class="item-title"> <label
+										v="电子现金账户" lan="l0179">电子现金账户</label><em lan="l35346">：</em>
+								</span>
+									<div class="item-con">
+										<span id="div_accountnumber_740994"> <span
+											lan="payeraccount_300">电子现金账户</span> <span>6217******7009</span>
+											<span lan="payeraccount_47669">深圳</span>
+										</span>
+									</div></li>
+								<li class="clearfix"><span class="item-title"> <label
+										v="账户状态" lan="l50519">账户状态</label><em lan="l35346">：</em>
+								</span>
+									<div class="item-con" id="div_50519_740956"
+										lan="electron_cash_account_status_A">正常</div></li>
+							</ul>
+						</div>
+						<div class="tb-box ">
+							<table class="tb">
+								<thead>
+									<tr>
+										<th class="fi wp25 tar" v="电子现金卡片余额上限" lan="l1888">电子现金卡片余额上限</th>
+										<th class="wp25 tar" lan="l1889" v="电子现金脱机消费单笔交易限额">电子现金脱机消费单笔交易限额</th>
+										<th class="wp15" lan="l0093" v="币种">币种</th>
+										<th class="wp10" lan="l0494" v="钞/汇">钞/汇</th>
+										<th class="tar" lan="l1848" v="补登余额">补登余额</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="odd">
+										<td class="fi tar" lan="num" currcode="CNY">1,000.00</td>
+										<td class="tar" lan="num" currcode="CNY">1,000.00</td>
+										<td class="wp20" lan="currency_code_CNY">人民币元</td>
+										<td>-</td>
+										<td class="tar" lan="num" currcode="CNY"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tips-box">
+							<div class="tips-title" lan="l6720" v="温馨提示">温馨提示</div>
+							<ol class="sn-box">
+								<li class="clearfix" id="div_1852_740962"><label
+									class="num">1.</label> <span class="con"
+									v="夜间由于我行须进行系统数据处理，可能出现部分账户余额短时间无法查询的情况。" lan="l1852">夜间由于我行须进行系统数据处理，可能出现部分账户余额短时间无法查询的情况。</span>
+								</li>
+								<li class="clearfix " id="div_8053_740963"><label
+									class="num">2.</label> <span class="con"
+									v="电子现金卡片余额上限是指记载在客户芯片上，客户可自行修改的可充值金额上限。" lan="l8053">电子现金卡片余额上限是指记载在客户芯片上，客户可自行修改的可充值金额上限。</span>
+								</li>
+								<li class="clearfix " id="div_8054_740964"><label
+									class="num">3.</label> <span class="con"
+									v="电子现金卡片单笔交易限额是指记载在客户芯片上，客户可自行修改的脱机消费单笔金额上限。" lan="l8054">电子现金卡片单笔交易限额是指记载在客户芯片上，客户可自行修改的脱机消费单笔金额上限。</span>
+								</li>
+								<li class="clearfix " id="div_8055_740965"><label
+									class="num">4.</label> <span class="con"
+									v="补登账户余额为以网银等渠道在卡片未出现情况下进行充值的金额，您需在我行自助终端或柜台将资金写入芯片进行使用。"
+									lan="l8055">补登账户余额为以网银等渠道在卡片未出现情况下进行充值的金额，您需在我行自助终端或柜台将资金写入芯片进行使用。</span>
+								</li>
+							</ol>
+						</div>
+					</div>
+					<p class="page-num text-darkengray tac">
+						<span lan="l7935" v="页面号">页面号</span><em>A0010001</em>
+					</p>
+				</div>
+				<div class="login-aside non-bro hide" visible="false"
+					style="display: none;">
+					<ul class="login-info">
+						<li><div id="p_50524_740996" lan="l50524" v="尚未开通网上银行服务。">尚未开通网上银行服务。</div></li>
+					</ul>
+					<div class="pay-ats" style="margin: 10px">
+						<div class="link-icon">
+							<span class="text-darkenred" lan="l92826">关注我们</span> <span
+								class="text-darkenred" lan="l8776">：</span> <a
+								href="http://www.boc.cn/custserv/cs1/201209/t20120921_1989080.html"
+								target="_blank" class="sina-w"></a> <a
+								href="http://www.boc.cn/custserv/cs1/201301/t20130115_2126343.html"
+								target="_blank" class="weixin-w"></a> <a
+								href="http://www.boc.cn/ebanking/service/cs1/201009/t20100921_1151946.html"
+								target="_blank" class="phone-w"></a>
+						</div>
+						<div class="text-gray" lan="l92827">达喜银行微银行</div>
+						<img src="images/erweima.jpg" alt="中国银行微银行" class="erweima">
+					</div>
+					<div class="login-ad-i" style="padding-left: 0; text-align: center">
+						<a class="ad" href="javascript:void(0)" title=""><img
+							src="images/banner-2.png"></a>
+					</div>
+				</div>
+				<div class="login-aside login-net">
+					<div class="bro">
+						<div lan="l50521" v="您已开通网上银行服务，">您已开通网上银行服务，</div>
+						<div lan="l50516" v="请登录网银，享受更多服务！">请登录网银，享受更多服务！</div>
+					</div>
+
+					<p class="tac" style="padding-bottom: 75px; padding-top: 40px;">
+						<a href="javascript:void;" class="btn" id="btn_login_740822">
+							<span class="btn-r w150" lan="l6439" v="登录网上银行">登录网上银行</span>
+						</a>
+					</p>
+					<div class="pay-ats" style="margin: 10px">
+						<div class="link-icon">
+							<span class="text-darkenred" lan="l92826">关注我们</span> <span
+								class="text-darkenred" lan="l8776">：</span> <a
+								href="http://www.boc.cn/custserv/cs1/201209/t20120921_1989080.html"
+								target="_blank" class="sina-w"></a> <a
+								href="http://www.boc.cn/custserv/cs1/201301/t20130115_2126343.html"
+								target="_blank" class="weixin-w"></a> <a
+								href="http://www.boc.cn/ebanking/service/cs1/201009/t20100921_1151946.html"
+								target="_blank" class="phone-w"></a>
+						</div>
+						<div class="text-gray" lan="l92827">中国银行微银行</div>
+						<img src="images/erweima.jpg" alt="中国银行微银行" class="erweima">
+					</div>
+					<div class="login-ad-i"
+						style="padding-left: 0; text-align: center;">
+						<a class="ad" href="http://bocchongzhi.yeepay.com/"
+							target="_blank" urllan="url.ad2"><img
+							src="images/banner-2.png"></a>
+					</div>
+				</div>
+			</div>
+			<div
+				style="width: 100%; clear: both; color: #999; line-height: 20px; padding-top: 8px; text-align: center"
+				id="pageNo">
+				<span _tmplitem="2" lan="l7935" v="页面号">页面号</span><em _tmplitem="2">A0010001</em>
+			</div>
+		</div>
+		<div id="footer" class="bu-footer">
+			<p>
+				<a href="https://95566.boc.cn/ZIM/index.htm" id="a_60_1170"
+					urllan="url.onlineServiceUrl" lan="l22359" v="在线客服">在线客服</a><em
+					class="ml5 mr5">|</em><a v="服务热线" lan="l9881" name="servicHotline"
+					urllan="url.servicHotlineUrl"
+					href="https://ea.ebs.bankofchina.com/contactUs_cn.html?locale=zh_CN"
+					onclick="openNewWindow(this.href);return false">服务热线</a><em
+					class="ml5 mr5">|</em><a title="安全须知" lan="l0022" v="安全须知"
+					urllan="url.saftNote" name="saftNote"
+					href="http://www.boc.cn/ebanking/security/bocnet/200810/t20081022_990714.html"
+					onclick="openNewWindow(this.href);return false">安全须知</a><em
+					class="ml5 mr5">|</em><a href="javascript:void(0);" title="打印本页"
+					id="welcome_print" lan="l10036" v="打印本页">打印本页</a>
+			</p>
+			<p>
+				<span v="中国银行股份有限公司" lan="l0069">中国银行股份有限公司</span><span v="版权所有"
+					lan="l0070" class="ml10">版权所有</span>
+			</p>
+		</div>
+	</div>
+	<iframe id="iframe" class="hide" marginwidth="0" marginheight="0"
+		framespacing="0" frameborder="0" width="100%" height="800px"></iframe>
+	<div class="hide editfail" id="msgBox"
+		style="position: absolute; z-index: 999; width: 630px">
+		<div class="bu-pop"
+			style="position: absolute; z-index: 999; left: 0; top: 0">
+			<h4 class="pop-title">
+				<span class="txt" lan="l7282">操作提示</span> <a class="close"
+					href="javascript:void(0);" id="closeMsgBox"></a>
+			</h4>
+			<div class="pop-con">
+				<p class="unset">
+					<span id="msgContent">操作失败!</span>
+				</p>
+				<p class="btn-box tac" style="margin-bottom: 0">
+					<a id="hideMsgBox" class="btn" href="javascript:void(0);"><span
+						class="btn-r" lan="l0315" v="确认"></span></a>
+				</p>
+			</div>
+		</div>
+		<iframe src="" marginwidth="0" framespacing="0" marginheight="0"
+			frameborder="0" width="100%" height="100%"
+			style="left: 0; background: rgb(255, 255, 255); top: 0; width: 100%; filter: alpha(opacity = 0); -moz-opacity: 0; opacity: 0; zoom: 1; position: absolute; z-index: 998"></iframe>
+	</div>
+	<div id="ajaxLoading"
+		style="position: absolute; left: 0px; top: 0px; width: 100%; height: 817px; zoom: 1; z-index: 999; display: none;"
+		class="hide" visible="false">
+		<img
+			style="width: 32px; height: 32px; margin-left: -16px; margin-top: -16px; top: 50%; left: 50%; position: relative"
+			src="images/ajaxloading-new.gif">
+	</div>
+	<script type="text/javascript"
+		src="scripts/dojo/dojo.js.1.6.1.uncompressed.js"></script>
+	<script type="text/javascript" src="scripts/application.js"></script>
+	<script type="text/javascript"
+		src="scripts/dojo/NodeList-manipulate.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/dojo/dojo2.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/common.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/dojo.common.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/spine.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/dojo.tmpl.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/errorCode.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/tooltip.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/formValid.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/itselect.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/json2.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/localize.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/printer.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/devicePrint.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/common.propertiesConfig.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/datepicker.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/datepicker2.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/util/dateUtil.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/ajaxfileupload.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/disabled.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/detachSigner.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/securityFactor.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/CFCASIPInput.min.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/secEditCtrl.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/antiCheat.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/liquidmetal.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/raphael.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/util/currencyUtil.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/util/loadBankName.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/util/stringUtil.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/util/validationUtil.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/util/qswhGB2312.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/tchart.min.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/RoutineDate.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/tripledes.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/util/constant.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/util/fessUtil.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/lib/pinyin.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/util/abroadRemitUtil.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/minsheng.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/minshengParser.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/controllers/menu/cMenuLoad.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/controllers/menu/cMenu.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/controllers/menu/cSubMenu.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/controllers/menu/cHeader.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/controllers/welcome/cWelcome.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/controllers/welcome/cardWelcome.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/controllers/welcome/cRelevanceForQuery.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/controllers/welcome/crossFinace.js?v=20190505070841817"></script>
+	<script type="text/javascript"
+		src="scripts/models.min.js?v=20190505070841817"></script>
+	<div class="hide"
+		style="position: absolute; z-index: 3940; display: none;" id="info-ps"
+		visible="false">
+		<div class="info-tip">
+			<p class="arrow"></p>
+			<div id="info-con" class="text"></div>
+		</div>
+	</div>
+	<div id="lightbox"
+		style="left: 0px; background: rgb(150, 150, 150); top: 0px; width: 100%; height: 100%; opacity: 0.3; zoom: 1; position: fixed; z-index: 7; display: none;"
+		class="hide" visible="false"></div>
+</body>
+</html>
