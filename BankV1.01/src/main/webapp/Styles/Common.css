@@ -84,7 +84,7 @@ a:hover { color:red; text-decoration:none; }
 .m_mid_con{width:723px;margin:0px;margin-bottom:8px;height:213px!important;padding:0;}
 .m_mid_con_newprod{width:723px;margin:0px;margin-bottom:0px;margin-bottom:8px!important;margin-bottom:8px;height:225px!important;height:225px!important;padding:0;}
 
-.m_head{margin:0px; height:33px!important;height:33px; vertical-align:middle;background: url(../images/main_content_bg.jpg) no-repeat;color:#cc0000;font-weight:bold;}
+.m_head{margin:0px; height:33px!important;height:33px; vertical-align:middle;background:rgb(155,0,106,0.26) no-repeat;color:#cc0000;font-weight:bold;}
 .m_head span{margin-left:45px; float:left;font-size:14px; margin-top:8px;  vertical-align:baseline; }
 
 .m_con_container{ width:721px;height:172px;border:1px solid #cccccc;margin:0px;padding:0;border-top:none;}
@@ -353,9 +353,9 @@ a.gray12:hover { color:Red;text-decoration:none}
 .rightheader A.rightheadertitle:link,A.rightheadertitle:visited,A.rightheadertitle:hover{ font-size:14px; color:White; font-weight:bold; margin-left:8px;line-height:16px; height:16px}
 .rightheader img{ vertical-align:text-top; margin-top:-1px}
 .netbankrightbg{background:url(../images/netbank_r_bg.jpg);width:208px;}
-.netbankdiv{background:url(../images/netbankdiv.jpg) no-repeat;width:208px; height:478px; overflow:hidden}
+.netbankdiv{background:rgb(155,0,106,0.26) no-repeat;width:208px; height:478px; overflow:hidden}
 .netbankbottom {background:url(../images/netbankdivbottom.jpg) no-repeat bottom;width:208px; height:5px; font-size:1px; background-color:White;}
-.whitebgtop{background:url(../images/whitetop.gif) no-repeat;width:198px; background-position:top; height:5px!important; min-height:5px; *height:5px; margin:0px auto;overflow:hidden; font-size:1px;}
+.whitebgtop{background:rgb(155,0,106,0.26) no-repeat;width:198px; background-position:top; height:5px!important; min-height:5px; *height:5px; margin:0px auto;overflow:hidden; font-size:1px;}
 .whitebgmid{width:198px;margin:0px auto; overflow:hidden; background-color:White; }
 .whitebgbottom{background:url(../images/whitebottom.gif) no-repeat bottom;width:198px;height:5px!important; min-height:5px; *height:5px; margin:0px auto;overflow:hidden; font-size:1px;}
 .whitebgmid .bg{background:url(../images/itembg.gif) no-repeat;width:178px; height:25px; margin: 2px 0px 3px 10px; float:left;}
