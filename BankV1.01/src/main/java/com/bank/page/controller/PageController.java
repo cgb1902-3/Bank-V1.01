@@ -9,11 +9,6 @@ public class PageController {
 	public String doIndex(){
 		return "index";
 	}
-<<<<<<< HEAD
-	@RequestMapping("doUserMessage")
-	public String doUserMessage() {
-		return "usermessage";
-=======
 	@RequestMapping("doLoginUser")
 	public String doLoginUser(){
 		return "login_user";
@@ -21,6 +16,9 @@ public class PageController {
 	@RequestMapping("doLoginManager")
 	public String doLoginManager(){
 		return "login_manager";
->>>>>>> 3809a7e4d4016876f998b51847539cd536d56b32
+	}
+	@RequestMapping("doUserMessage")
+	public String doUserMessage() {
+		return "usermessage";
 	}
 }
