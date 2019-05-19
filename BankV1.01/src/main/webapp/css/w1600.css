@@ -1,0 +1,287 @@
+.w1600 .bu-main, .w1600 .bu-wrapper {
+	width: 1600px
+}
+
+.w1600 .page-num {
+	width: 1400px
+}
+
+.w1600 .bu-main .article {
+	width: 1366px;
+	min-height: 630px
+}
+
+.w1600 .bu-main .aside {
+	min-height: 620px
+}
+
+.w1600 .bu-main .w978 {
+	width: 1554px;
+	padding: 10px 22px 0
+}
+
+.w1600 .article .tb-scroll {
+	width: 1362px
+}
+
+.w1600 .w978 .tb-scroll {
+	width: 1552px
+}
+
+.w1600 .bu-nav .nav-item {
+	padding: 0 32px
+}
+
+.w1600 .bu-header {
+	background: url(../images/bocue-w1600.png) 0 0 no-repeat
+}
+
+.w1600 .home .message-box {
+	height: 180px !important;
+	padding-left: 20px
+}
+
+.w1600 .home .message h4 {
+	font-size: 16px;
+	margin-bottom: 10px
+}
+
+.w1600 .home .message p {
+	font-size: 14px;
+	margin-bottom: 10px
+}
+
+.w1600 .home .message-box .i-tips {
+	width: 810px
+}
+
+.w1600 .service-check {
+	height: 90px
+}
+
+.w1600 .build-boc {
+	width: 1598px !important;
+	height: 620px
+}
+
+.w1600 .home .self-fuc {
+	min-height: 600px
+}
+
+.w1600 .home .news {
+	height: 220px
+}
+
+.w1600 .home .news .news-container {
+	height: 180px
+}
+
+.en .w1600 .bu-nav .navoh .nav-item {
+	line-height: 1.5;
+	width: 125px
+}
+
+.en .w1600 .bu-nav #nav-bottom .nav-item {
+	*width: 115px
+}
+
+.w1600 .act-w1600 .w65 {
+	width: 130px
+}
+
+.w1600 .act-w1600 .w140 {
+	width: 200px
+}
+
+.w1600 .act-w1600 .w90 {
+	width: 12%
+}
+
+.w1600 .w90 {
+	width: 150px
+}
+
+.w1600 .w120 {
+	width: 180px
+}
+
+.w1600 .w140 {
+	width: 200px
+}
+
+.w1600 .w60, .w1600 .w70 {
+	width: 100px
+}
+
+.w1600 .w65 {
+	width: 110px
+}
+
+.w1600 .w55 {
+	width: 105px
+}
+
+.w1600 .w110 {
+	width: 170px
+}
+
+.w1600 .sel.w70 {
+	width: 68px
+}
+
+.w1600 .sel.w70 .title .txt, .w1600 .sel.w70 .title .txt a {
+	width: 48px
+}
+
+.w1600 .sel.w85 {
+	width: 85px
+}
+
+.w1600 .sel.w85 .title .txt, .w1600 .sel.w85 .title .txt a {
+	width: 65px
+}
+
+.w1600 .sel.w120 {
+	width: 118px
+}
+
+.w1600 .sel.w120 .title .txt, .w1600 .sel.w120 .title .txt a {
+	width: 98px
+}
+
+.w1600 .pop-con th.w90 {
+	width: 90px
+}
+
+.w1600 .pop-con th.w120 {
+	width: 120px
+}
+
+.w1600 .pop-con th.w140 {
+	width: 140px
+}
+
+.w1600 .pop-con th.w60 {
+	width: 60px
+}
+
+.w1600 .pop-con th.w70 {
+	width: 70px
+}
+
+.w1600 .pop-con th.w65 {
+	width: 65px
+}
+
+.w1600 .pop-con th.w55 {
+	width: 55px
+}
+
+.w1600 .pop-con th.w110 {
+	width: 110px
+}
+
+.w1600 .tb-scroll .w90 {
+	width: 90px
+}
+
+.w1600 .bu-wrapper .login-net, .w1600 .bu-wrapper .non-bro {
+	width: 390px
+}
+
+.w1600 .bu-wrapper .non-bro .login-ad-i {
+	padding-left: 85px
+}
+
+.w1600 .oa-gift .tb-scroll {
+	width: 1178px
+}
+
+.w1600 #license_info #txt_56942_1176450 {
+	width: 150px;
+	*width: 140px
+}
+
+.w1600 #license_info #sel_identifytype_1176556 {
+	width: 200px
+}
+
+.w1600 #license_info #sel_identifytype_1176556 .title .txt {
+	width: 178px
+}
+
+.w1600 .receipt-box .w60 {
+	width: 60px
+}
+
+.w1600 .receipt-box .w90 {
+	width: 90px
+}
+
+.w1600 .receipt-box .w120 {
+	width: 120px
+}
+
+.w1600 .receipt-box .w140 {
+	width: 140px
+}
+
+.w1600 .receipt-box .w70 {
+	width: 70px
+}
+
+.w1600 .receipt-box .w65 {
+	width: 65px
+}
+
+.w1600 .receipt-box .w55 {
+	width: 55px
+}
+
+.w1600 .receipt-box .w110 {
+	width: 110px
+}
+
+.w1600 .home .self-fuc .icon01 {
+	top: 58px
+}
+
+.w1600 .home .self-fuc .icon04 {
+	top: 84px
+}
+
+.w1600 .home .self-fuc .icon05 {
+	top: 200px
+}
+
+.w1600 .home .self-fuc .icon06 {
+	top: 316px
+}
+
+.w1600 .home .self-fuc .icon07 {
+	top: 385px
+}
+
+.w1600 .home .self-fuc .icon08 {
+	top: 395px
+}
+
+.w1600 .home .self-fuc .icon09 {
+	top: 348px
+}
+
+.w1600 .moreBox {
+	height: 142px
+}
+
+.w1600 .moreBox .more {
+	width: 63px
+}
+
+.w1600 .deposit .dep_insur-logo {
+	margin: 30px auto
+}
+
+.w1600 .home .message-box .message {
+	width: 705px
+}

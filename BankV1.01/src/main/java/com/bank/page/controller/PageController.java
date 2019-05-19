@@ -9,4 +9,8 @@ public class PageController {
 	public String test(){
 		return "index";
 	}
+	@RequestMapping("doUserMessage")
+	public String doUserMessage() {
+		return "usermessage";
+	}
 }
