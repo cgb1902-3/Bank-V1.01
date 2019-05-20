@@ -26,7 +26,7 @@
 	<!--注册视图解析对象 -->
 	<bean id="viewResovler"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="Prefix" value="/WEB-INF/pages/" />
+		<property name="Prefix" value="/WEB-INF/pages/**" />
 		<property name="Suffix" value=".html" />
 	</bean>
 	<!-- 配置spring mvc拦截器 
