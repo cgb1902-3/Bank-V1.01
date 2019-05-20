@@ -11,14 +11,22 @@ public class PageController {
 	}
 	@RequestMapping("doLoginUser")
 	public String doLoginUser(){
-		return "/user/login_user";
+		return "user/login_user";
 	}
 	@RequestMapping("doLoginManager")
 	public String doLoginManager(){
-		return "/manager/login_manager";
+		return "manager/log";
 	}
 	@RequestMapping("doUserMessage")
 	public String doUserMessage() {
-		return "/user/usermessage";
+		return "user/usermessage";
+	}
+	@RequestMapping("doIndexManager")
+	public String doIndexManager(){
+		return "manager/index_manager";
+	}
+	@RequestMapping("doMainUI.do")
+	public String doMainUI(){
+		return "manager/main";
 	}
 }
