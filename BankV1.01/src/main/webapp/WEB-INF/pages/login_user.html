@@ -61,6 +61,7 @@
 			}
 		});
 		$(".stu_login_error").Validform({
+			
 			tiptype : function(msg, o, cssctl) {
 				var objtip = $(".stu_error_box");
 				cssctl(objtip, o.type);
@@ -199,7 +200,7 @@
 			<!-- 用户登录开始 -->
 			<div>
 				<div class="stu_error_box"></div>
-				<form action="" method="post" class="stu_login_error">
+				<form action="" method="post" class="stu_login_error" onsubmit="alert("ASD")">
 					<div id="username">
 						<label>帐&nbsp;&nbsp;号：</label> <input type="text"
 							id="stu_username_hide" name="username" placeholder="输入用户名"
@@ -216,7 +217,7 @@
 					<div id="code">
 						<label>验证码：</label> <input type="text" id="stu_code_hide"
 							name="code" placeholder="输入验证码" nullmsg="验证码不能为空！"
-							datatype="*4-4" errormsg="验证码有4位数！" sucmsg="验证码验证通过！" />
+							datatype="*6-6" errormsg="验证码有6位数！" sucmsg="验证码验证通过！" />
 						<form action="#">
 							<input type="text" onclick="createCode()" readonly="readonly"
 								id="checkCode1" class="unchanged" style="width: 80px" /><br />
@@ -226,10 +227,18 @@
 						<input type="checkbox" name="remember"> <label>记住密码</label>
 					</div>
 					<div id="login">
-						<button type="submit">登录</button>
+						<button type="submit" onclick="login()">登录</button>
 					</div>
 				</form>
 			</div>
+			<script type="text/javascript">
+				function login(){
+					window.location='doUserMessage.do'
+					username:$("#stu_username_hide").val(),
+					password:$("#stu_password_hide").val(),
+					isRememberMe:$("#remember").prop("checked")
+				}
+			</script>
 			<!-- 用户登录结束-->
 			<!-- 用户注册开始-->
 			<div class="hide">
@@ -287,5 +296,6 @@
 				<li><a href="javascript:;"><img src="images/2.jpg"></a></li>
 			</ul>
 		</div>
+		
 </body>
 </html>
