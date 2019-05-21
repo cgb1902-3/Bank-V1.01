@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="com.bank.page.entity.SysCard">
+  <mapper namespace="com.bank.user.dao.SysUserDao">
   
   <!-- 查询所有信息,不需要分页显示 -->
-    <select id="findObjectsById" resultType="com.bank.page.entity.SysCard">
+    <select id="findObjectsById" resultType="com.bank.user.entity.SysCard">
       select * from sys_cards where id=#{id}
     </select>
    <insert id="insertObjects" parameterType="int">
@@ -14,7 +14,7 @@
    select * from user ;
    </select>
    
-   <select id="findUserByUserName" resultType="com.bank.page.entity.SysCard">
+   <select id="findUserByUserName" resultType="com.bank.user.entity.SysCard">
    select *from user where username=#{username}
    </select>
   </mapper>

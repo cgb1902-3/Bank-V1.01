@@ -3,7 +3,7 @@ package com.bank.user.controller;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -11,7 +11,7 @@ import com.bank.user.service.SysUserService;
 import com.bank.user.vo.JsonResult;
 
 @RequestMapping("/user/")
-
+@Controller
 public class SysUserController {
 	private SysUserService  sysUserService;
 	@RequestMapping("doUserListUI")

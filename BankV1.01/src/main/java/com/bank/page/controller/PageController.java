@@ -2,7 +2,6 @@ package com.bank.page.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 @Controller
 public class PageController {
 	@RequestMapping("doIndex")
@@ -28,5 +27,17 @@ public class PageController {
 	@RequestMapping("doMainUI.do")
 	public String doMainUI(){
 		return "manager/main";
+	}
+	@RequestMapping("doUserAddUI.do")
+	public String doUserAddUI(){
+		return "manager/useradd";
+	}
+	@RequestMapping("doVipAddUI.do")
+	public String doVipAddUI(){
+		return "manager/vipadd";
+	}
+	@RequestMapping("doAddUI.do")
+	public String doAddUI(){
+		return "manager/vipadd2";
 	}
 }
