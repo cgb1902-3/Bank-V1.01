@@ -16,10 +16,6 @@
 			<a href="doMainUI.do" target="main"><div class="line">
 					<img src="../img/coin01.png" />&nbsp;&nbsp;首页
 				</div></a>
-			<!-- <dl class="system_log">
-			<dt><img class="icon1" src="../img/coin01.png" /><img class="icon2"src="../img/coin02.png" />
-				首页<img class="icon3" src="../img/coin19.png" /><img class="icon4" src="../img/coin20.png" /></dt>
-		</dl> -->
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="../img/coin03.png" /><img class="icon2"
@@ -75,7 +71,7 @@
 				</dd>
 				<dd>
 					<img class="coin11" src="../img/coin111.png" /><img class="coin22"
-						src="../img/coin222.png" /><a class="cks">退出</a><img
+						src="../img/coin222.png" /><a onclick="doLogout()" class="cks">退出</a><img
 						class="icon5" src="../img/coin21.png" />
 				</dd>
 			</dl>
@@ -84,4 +80,9 @@
 
 	</div>
 </body>
+<script type="text/javascript">
+	function doLogout(){
+		 window.location='doIndex.do';
+	}
+</script>
 </html>

@@ -28,16 +28,4 @@ public class PageController {
 	public String doMainUI(){
 		return "manager/main";
 	}
-	@RequestMapping("doUserAddUI.do")
-	public String doUserAddUI(){
-		return "manager/useradd";
-	}
-	@RequestMapping("doVipAddUI.do")
-	public String doVipAddUI(){
-		return "manager/vipadd";
-	}
-	@RequestMapping("doAddUI.do")
-	public String doAddUI(){
-		return "manager/vipadd2";
-	}
 }
